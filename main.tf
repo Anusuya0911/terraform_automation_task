@@ -6,7 +6,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.new.id]
   tags = {
-    Name = "new_instance"
+    Name = "new_instance1"
   }
 }
 
