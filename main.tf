@@ -2,7 +2,7 @@
 
 
 resource "aws_instance" "example" {
-  ami           = "ami-07edab31d909a5063"
+  ami           = "ami-0e9bb2e3d3775f4a1"
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.new.id]
   tags = {
