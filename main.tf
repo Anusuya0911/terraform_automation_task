@@ -1,3 +1,17 @@
+
+
+
+resource "aws_instance" "example" {
+  ami           = "ami-07edab31d909a5063"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.new.id]
+  tags = {
+    Name = "new_instance"
+  }
+}
+
+
+
 resource "aws_security_group" "new" {
   ingress {
     protocol  = "tcp"
@@ -13,11 +27,4 @@ resource "aws_security_group" "new" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-resource "aws_instance" "example" {
-  ami           = "ami-07edab31d909a5063"
-  instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.new.id]
-  tags = {
-    Name = "HelloWorld"
-  }
-}
+
